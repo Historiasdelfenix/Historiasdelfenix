@@ -12,35 +12,61 @@
     <nav>
       <a href="#about">Sobre mí</a>
       <a href="#projects">Proyectos</a>
+      <a href="#books">Mis Libros</a>
       <a href="#contact">Contacto</a>
     </nav>
   </header>
-  
-  <section id="about">
+
+  <section id="about" class="scroll-animation">
     <h2>Sobre mí</h2>
     <p>Esta es una breve descripción sobre mí. Aquí puedes hablar de quién eres y qué haces.</p>
   </section>
-  
-  <section id="projects">
+
+  <section id="projects" class="scroll-animation">
     <h2>Proyectos</h2>
     <p>Listado de algunos proyectos o trabajos que he realizado.</p>
   </section>
-  
+
+  <section id="books" class="scroll-animation">
+    <h2>Mis Libros</h2>
+    <div class="book-container">
+      <div class="book">
+        <img src="images/libro1.png" alt="Libro 1">
+      </div>
+      <div class="book">
+        <img src="images/libro2.jpeg" alt="Libro 2">
+      </div>
+      <div class="book">
+        <img src="images/libro3.jpg" alt="Libro 3">
+      </div>
+    </div>
+  </section>
+
   <footer id="contact">
     <p>Contacto: email@ejemplo.com</p>
   </footer>
+
+  <!-- JavaScript para las animaciones al hacer scroll -->
+  <script>
+    function isVisible(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+      );
+    }
+
+    function revealOnScroll() {
+      const elements = document.querySelectorAll('.scroll-animation');
+      elements.forEach(element => {
+        if (isVisible(element)) {
+          element.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Ejecutar al cargar la página
+  </script>
 </body>
-<section id="books" class="scroll-animation">
-  <h2>Mis Libros</h2>
-  <div class="book-container">
-    <div class="book">
-      <img src="images/libro1.png" alt="Libro 1">
-    </div>
-    <div class="book">
-      <img src="images/libro2.jpeg" alt="Libro 2">
-    </div>
-    <div class="book">
-      <img src="images/libro3.jpg" alt="Libro 3">
-    </div>
-  </div>
-</section>
+</html>
