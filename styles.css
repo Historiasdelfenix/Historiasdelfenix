@@ -117,3 +117,11 @@ footer {
     padding: 1rem;
   }
 }
+/* Efecto 3D al pasar el mouse sobre las imágenes de los libros */
+.book img {
+  transition: transform 0.5s ease-out;
+}
+
+.book:hover img {
+  transform: perspective(1000px) rotateY(10deg) scale(1.05); /* Efecto 3D */
+}
