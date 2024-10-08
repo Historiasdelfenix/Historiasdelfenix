@@ -7,19 +7,29 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
- <header>
+<header>
   <div class="slideshow-container">
-    <div class="mySlides fade">
+
+    <!-- Slides con imágenes -->
+    <div class="mySlides">
       <img src="images/Banner1.jpg" style="width:100%" alt="Banner 1">
     </div>
 
-    <div class="mySlides fade">
+    <div class="mySlides">
       <img src="images/Banner2.jpg" style="width:100%" alt="Banner 2">
     </div>
 
-    <div class="mySlides fade">
+    <div class="mySlides">
       <img src="images/Banner3.jpg" style="width:100%" alt="Banner 3">
     </div>
+
+    <!-- Puntos de navegación -->
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
   </div>
 </header>
 
